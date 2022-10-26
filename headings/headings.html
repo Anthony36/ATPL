@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        class Heading {
+            constructor(height, width) {
+                this.height = height;
+                this.width = width;
+            }
+        }
+        let headingsToRetry = [];
+
+        $(document).ready(function() {
+            $(document).on('submit', '#headingsForm', function() {
+            // do your things
+            var turning = document.getElementById("Turning");
+            if (turning.innerHTML.length>4)
+            {
+                //reloads the page on second click of 'check'
+                return true;
+            };
+            console.log("started submmit");
+
+            var headingTo = document.getElementById("HeadingTo");
+            var checkValue = document.getElementById("CheckVal");
+            var answer = document.getElementById("Answer");
+            var checkValueTime = document.getElementById("CheckValTime");
+            var answerInTime = document.getElementById("AnswerInTime");
+
+            headingsToRetry.push(new Heading(headingTo, turning));//can't use this atm as the page is designed to reload each try.
+console.log(headingsToRetry);
+
+            var turningInt = turning.innerText;
+            var headingToInt = headingTo.innerText;
+      
+            var iChange = headingToInt - turningInt;
+            console.log(iChange);
+            if (iChange < 0){iChange = iChange * -1};
+            console.log(iChange);
+            if (iChange>180){ iChange = 360 - iChange;}
+            console.log(iChange);
+
+            if (answer.value.length>0){
+                var answerInt = answer.value;
+
+                if (iChange == answerInt){
+                    turning.innerHTML += " <span style='font-weight:bold; color:red;'>CORRECT!</span>";
+                }else{
+                    turning.innerHTML += " <span style='font-weight:bold; color:red;'>Not quite, should be:" + iChange + "</span>";
+                }
+            }
+            else{
+                var iChangeInTime = Math.floor( iChange/3);
+                var answerInTimeInt = answerInTime.value;
+
+                if (answerInTimeInt == iChangeInTime){
+                    turning.innerHTML += " <span style='font-weight:bold; color:red;'>CORRECT!</span>";
+                }else{
+                    turning.innerHTML += " <span style='font-weight:bold; color:red;'>Not quite, should be:" + iChangeInTime + " for:" +  iChange + "º</span>";
+                }
+            }
+            //alert("HERE");
+            event.preventDefault();
+            return false;
+            });
+        });
+
+        function newHeading(){
+            var turning = document.getElementById("Turning");
+            turning.innerHTML=getRandomInt(0,37) + "" + (getRandomInt(0,2) * 5);
+            var headingTo = document.getElementById("HeadingTo");
+            headingTo.innerHTML=getRandomInt(0,37) + "" + (getRandomInt(0,2) * 5);
+            var checkValue = document.getElementById("CheckVal");
+            var answer = document.getElementById("Answer");
+            var checkValueTime = document.getElementById("CheckValTime");
+            var answerInTime = document.getElementById("AnswerInTime");
+
+            if (answer.innerText.length>0){
+                answer.focus();
+            }else{
+                answerInTime.focus();
+            }
+            //checkValue.focus();
+            //checkValue.value;
+        }
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+        }
+
+        function handleForm(event){
+        } 
+</script>
+</head>
+<body onload="newHeading();">
+    <form id="headingsForm">
+        Currently on heading:
+        <div id="HeadingTo">127</div>
+        Go to heading:
+        <div id="Turning">turning</div>
+        Shortest turn:
+        <input id="Answer" type="text" value="" />
+Time to turn:
+        <input id="AnswerInTime" type="text" value="" />
+        <input id="CheckVal" value="Check" type="submit" default />
+        <p>
+            3º = 1 second <br />
+            9ª = 3 seconds <br />
+            15º = 5 seconds <br />
+            180º = 1 min = 60 seconds
+        </p>
+    </form>
+</body>

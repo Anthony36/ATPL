@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="flightplan.js"></script>
+    <link href="flightplan.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="cruisePerformanceForm">
+        Pressure Altitude:
+        <input type="text" id="pressureAltitude" value="6500" /><br />
+       <!-- Target BHP
+        <input type="text" id="targetBhp" value="75"  /><br />
+       -->
+        Target Temp
+        <input type="text" id="targetTemp" value="10"  /><br />
+        Has speed fairings
+        <input type="checkbox" id="speedFairings"  /><br />
+
+        <input id="getCruisePerformance" value="Calculate" type="button" default />
+
+    </form>
+    <p id="CruisePerformanceOutput">
+
+    </p>
+</body>

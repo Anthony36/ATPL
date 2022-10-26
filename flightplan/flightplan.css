@@ -1,0 +1,12 @@
+.pressureTable * td {
+    border:3px solid black;
+}
+.pressureTable * tr, .pressureTable * td{
+    margin:0px;
+    padding:1px;
+    
+}
+
+.pressureTable {
+    border-spacing:0px;
+}
