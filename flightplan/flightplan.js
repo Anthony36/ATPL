@@ -42,7 +42,16 @@
             new CruisePerformance(8000,2500,79,106,6.4,74,105,6.1,70,105,5.8),
             new CruisePerformance(8000,2400,72,101,5.8,67,100,5.5,63,99,5.2),
             new CruisePerformance(8000,2300,64,96,5.3,60,95,5,56,94,4.8),
-            new CruisePerformance(8000,2200,57,91,4.8,53,89,4.6,50,87,4.4)
+            new CruisePerformance(8000,2200,57,91,4.8,53,89,4.6,50,87,4.4),
+            new CruisePerformance(10000,2500,75,105,6.2,71,105,5.8,67,104,5.5),
+            new CruisePerformance(10000,2400,68,101,5.6,63,99,5.3,60,98,5),
+            new CruisePerformance(10000,2300,60,95,5.1,57,94,4.8,54,92,4.6),
+            new CruisePerformance(10000,2200,54,89,4.6,51,87,4.5,48,84,4.3),
+            new CruisePerformance(12000,2450,68,102,5.6,64,101,5.3,60,100,5),
+            new CruisePerformance(12000,2400,68,102,5.6,64,101,5.3,60,100,5),
+            new CruisePerformance(12000,2300,57,94,4.9,54,92,4.6,51,89,4.5),
+            new CruisePerformance(12000,2200,51,88,4.5,48,84,4.4,45,79,4.2)
+
         ];
 
         let CruisePerformanceOutput;
