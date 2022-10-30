@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="shared.js"></script>
+    <script type="text/javascript" src="takeoffdist.js"></script>
+    <link href="takeoffdist.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="takeoffdistForm">
+        Takeoff Distances for C152 5-12 in POH<br />
+        To use just set the Press Alt (change 800 to desired) and then set the temp (change 8 to desired).  Also set the headwind and wether it's a dry
+        grass runway.  The rest is calculated automatically.<br />
+        Headwind (enter negative for tailwind)<br />
+        <input type="text" id="theHeadwind" value="9" /><br />
+        Dry grass runway:<br />
+        <input type="checkbox" id="isDryGrass" /><br />
+        <table id="takeoffdisttable">
+            <tr>
+                <td>Press Alt</td>
+                <td>
+                    Temp<br />
+                    <div>
+                    Grnd Roll /
+                    Total ft to clear 50 ft obs    
+                    </div>
+                </td>
+                <td>
+                    Temp<br />
+                    <div>
+                    Grnd Roll /
+                    Total ft to clear 50 ft obs    
+                    </div>
+                </td>
+                <td>
+                    Temp<br />
+                    <div>
+                    Grnd Roll /
+                    Total ft to clear 50 ft obs    
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="pressureAltLowPressure" /></td>
+                <td>
+                    <input type="text" id="lowtempLowPressure"  /><br />
+                    <div>
+                    <input type="text" id="lowGrndRollLowPressure"  />
+                    <input type="text" id="lowTotalFtToClearObsLowPressure"  />  
+                    </div>
+                </td>
+                <td>
+                    <input type="text" id="targettempLowPressure" value="8" /><br />
+                    <div>
+                    <input type="text" id="targetGrndRollLowPressure"  />
+                    <input type="text" id="targetTotalFtToClearObsLowPressure"  />  
+                    </div>
+                </td>
+                <td>
+                    <input type="text" id="hitempLowPressure"  /><br />
+                    <div>
+                    <input type="text" id="hiGrndRollLowPressure"  />
+                    <input type="text" id="hiTotalFtToClearObsLowPressure"  />  
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="pressureAlt" value="800" /></td>
+                <td>
+                </td>
+                <td>
+                    <div>
+                    <input type="text" id="targetGrndRoll"  />
+                    <input type="text" id="targetTotalFtToClearObs"  />  
+                    </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="hipressureAlt"  /></td>
+                <td>
+                    <div>
+                    <input type="text" id="lowGrndRollHiPressure"  />
+                    <input type="text" id="lowTotalFtToClearObsHiPressure"  />  
+                    </div>
+                </td>
+                <td>
+                    <div>
+                    <input type="text" id="targetGrndRollHiPressure"  />
+                    <input type="text" id="targetTotalFtToClearObsHiPressure"  />  
+                    </div>
+                </td>
+                <td>
+                    <div>
+                    <input type="text" id="hiGrndRollHiPressure"  />
+                    <input type="text" id="hiTotalFtToClearObsHiPressure"  />  
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <input id="getTakeoffDist" value="Calculate" type="button" default />
+
+    </form>
+    <div id="theTotals">
+
+    </div>
+</body>

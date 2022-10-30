@@ -1,0 +1,7 @@
+#takeoffdisttable, #takeoffdisttable *   td {
+    border: solid 1px black;
+}
+
+#targetGrndRoll, #targetTotalFtToClearObs {
+    font-weight: bold;
+}
