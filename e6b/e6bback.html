@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="e6bback.js"></script>
+    <link href="e6bback.css" rel="stylesheet" />
+    <script type="text/javascript" src="../flightplan/shared.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    This page is designed to do your wind corrections and ground speed, the same function as the back of your E6B <br />
+    <form id="windCorrectionForm">
+        True Airspeed (KTAS)<br />
+        <input type="text" id="trueAirspeed" value="100"  /><br />
+        True Track (TT)<br />
+        <input type="text" id="trueTrack" value="350"  /><br />
+        Wind Direction:<br />
+        <input type="text" id="windDirection" value="153" /><br />
+        Wind Velocity:<br />
+        <input type="text" id="windVelocity" value="8"  /><br />
+
+        <input id="getWindCorrection" value="Calculate" type="button" default />
+
+    </form>
+    Another good e6b calculator available online:<br />
+    <a href="https://e6bx.com/e6b/">https://e6bx.com/e6b/</a><br />
+    <p id="WindCorrectionOutput">
+
+    </p>
+</body>
