@@ -52,7 +52,6 @@ class e{
     }
  }
 
- //taken from https://e6bx.com/e6b/
 function e6b(e) {
     let t = 1 * (e.c || 0) || 0,
         a = 1 * (e.wd || 0) || 0,

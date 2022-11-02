@@ -20,6 +20,6 @@
             html.innerHTML="The contents of this website are for education purposes only.  It is up to you to verify these results are correct when using them.";
             document.body.append(html);
 
-            $("#header").html("<div style='border:1px solid black;'>Pages available on this site:<br /><a href='../headings/headings.html'>Practice heading turning</a><br /><a href='../flightplan/flightplan.html'>Quickly calc RPM, KTAS and GPH</a><br /><a href='../e6b/e6bback.html'>Wind and Ground Speed (E6B back)</a><br /><a href='../flightplan/landingdist.html'>Landing distance calc</a><br /><a href='../flightplan/takeoffdist.html'>Takeoff distance calc</a><br /></div>");
+            $("#header").html("<div style='border:1px solid black;'>Pages available on this site:<br /><a href='../headings/headings.html'>Practice heading turning</a><br /><a href='../flightplan/flightplan.html'>Quickly calc RPM, KTAS and GPH</a><br /><a href='../e6b/e6bback.html'>Wind and Ground Speed (E6B back)</a><br /><a href='../flightplan/landingdist.html'>Landing distance calc</a><br /><a href='../flightplan/takeoffdist.html'>Takeoff distance calc</a><br /><a href='../weight/wandb.html'>Weight and balance</a><br /></div>");
             
         });

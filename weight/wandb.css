@@ -1,0 +1,8 @@
+#tblWeightAndBalance * td {
+    border-top: solid 2px black;
+}
+
+#tblWeightAndBalance, #tblWeightAndBalance * tr {
+    margin: 0px;
+    padding: 0px;
+}

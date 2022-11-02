@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../flightplan/shared.js"></script>
+    <script type="text/javascript" src="wandb.js"></script>
+    <link href="wandb.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="header"></div>
+    <form id="wieghtAndBalanceForm">
+        Weight and balance for C152 6-13, 6-14, 6-9 in POH<br />
+
+        <table id="tblWeightAndBalance">
+            
+            <tr>
+                <td><!--
+                    <select id="aircraftDropdown">
+                        <option value="FGJK">FGJK</option>
+                    </select>
+                -->
+                </td>
+                <td>
+                    Weight
+                </td>
+                <td>
+                    Arm
+                </td>
+                <td>
+                    Moment
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Ramp Weight
+                </td>
+                <td>
+                    <input type="text" id="rampWt" value="1675" />
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Taxi allowance for runup & startup
+                </td>
+                <td>
+                    <input type="text" id="taxiAllowance" value="-5" />
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Gross Wt
+                </td>
+                <td>
+                    <input type="text" id="grossWt" value="1670" />
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Basic Empty Weight
+                </td>
+                <td>
+                    <input type="text" id="basicEmptyWeightWeight" value="1170.87" />
+                </td>
+                <td>
+                    <input type="text" id="basicEmptyWeightArm" value="30.29" />
+                </td>
+                <td>
+                    <input type="text" id="basicEmptyWeightMoment" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Front Seats
+                </td>
+                <td>
+                    <input type="text" id="frontSeatsWeight" value="375" />
+                </td>
+                <td>
+                    <input type="text" id="frontSeatsArm" value="39" />
+                </td>
+                <td>
+                    <input type="text" id="frontSeatsMoment" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Baggage (area 1)
+                </td>
+                <td>
+                    <input type="text" id="baggageAreaOneWeight" value="30" />
+                </td>
+                <td>
+                    <input type="text" id="baggageAreaOneArm" value="64" />
+                </td>
+                <td>
+                    <input type="text" id="baggageAreaOneMoment" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Baggage (area 2)
+                </td>
+                <td>
+                    <input type="text" id="baggageAreaTwoWeight" value="0" />
+                </td>
+                <td>
+                    <input type="text" id="baggageAreaTwoArm" value="85" />
+                </td>
+                <td>
+                    <input type="text" id="baggageAreaTwoMoment" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Sub Total (no fuel)</b>
+                </td>
+                <td>
+                    <input type="text" id="subTotalNofuelWeight" value="" />
+                </td>
+                <td>
+                    <input type="text" id="subTotalNofuelArm" value="" />
+                </td>
+                <td>
+                    <input type="text" id="subTotalNofuelMoment" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Fuel on Board in gal
+                </td>
+                <td>
+                    <input type="text" id="fuelOnBoardGal" value="24" />
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Fuel on Board in lbs
+                </td>
+                <td>
+                    <input type="text" id="fuelOnBoardWeight" value="" />
+                </td>
+                <td>
+                    <input type="text" id="fuelOnBoardArm" value="42" />
+                </td>
+                <td>
+                    <input type="text" id="fuelOnBoardMoment" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Total</b>
+                </td>
+                <td>
+                    <input type="text" id="totalWeight" />
+                </td>
+                <td>
+                    <input type="text" id="totalArm" />
+                </td>
+                <td>
+                    <input type="text" id="totalMoment" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Fuel for flight used in gal
+                </td>
+                <td>
+                    <input type="text" id="fuelForFlightUsedGal" value="14" />
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Landing Weight
+                </td>
+                <td>
+                    <input type="text" id="landingWeightWeight" value="" />
+                </td>
+                <td>
+                    <input type="text" id="landingWeightArm" value="42" />
+                </td>
+                <td>
+                    <input type="text" id="landingWeightMoment" />
+                </td>
+            </tr>
+        </table>
+        <input id="getWANOutput" value="Calculate" type="button" default />
+        <p id="wanOutput">
+
+        </p>
+    </form>
+</body>
