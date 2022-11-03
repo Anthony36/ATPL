@@ -113,7 +113,7 @@ function getWANOutput(){
     //taxiallowance is entered as a negative so add here:
     grossWt = rampWt + taxiAllowance;
     $("#grossWt").val(grossWt);
-    fuelOnBoardWeight = fuelOnBoardGal * 6;
+    fuelOnBoardWeight = (fuelOnBoardGal * 6) - taxiAllowance;
     $("#fuelOnBoardWeight").val(fuelOnBoardWeight);
 
     fuelForFlightMoment = fuelForFlightArm * fuelForFlightWeight;
@@ -163,8 +163,11 @@ function getWANOutput(){
     $("#totalLandingArm").val(totalLandingArm);
 
     let theHtml="";
-    if (totalWeight > grossWt){
-        theHtml += "<b>Flight is overweight!</b> You need to loose: " + (totalWeight - grossWt) + "lbs"
+    if (totalWeight > rampWt){
+        theHtml += "<b>Flight is overweight!</b> You need to loose: " + (totalWeight - rampWt) + "lbs.  That could be: " + ((totalWeight - rampWt) /6) + " gal of fuel.<br />New fuel weight could be:" +  (fuelOnBoardGal - ((totalWeight - rampWt) /6))
+    } 
+    else {
+        theHtml += "<b>Flight weight is ok</b> You could carry: " + (totalWeight - rampWt) + "lbs more."
     }
     $("#wanOutput").html(theHtml);
 }
