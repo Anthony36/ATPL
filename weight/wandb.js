@@ -164,10 +164,10 @@ function getWANOutput(){
 
     let theHtml="";
     if (totalWeight > rampWt){
-        theHtml += "<b>Flight is overweight!</b> You need to loose: " + (totalWeight - rampWt) + "lbs.  That could be: " + ((totalWeight - rampWt) /6) + " gal of fuel.<br />New fuel weight could be:" +  (fuelOnBoardGal - ((totalWeight - rampWt) /6))
+        theHtml += "<b>Flight is overweight!</b> You need to loose: " + (totalWeight - rampWt) + "lbs.  That could be: " + ((totalWeight - rampWt) /6) + " gal of fuel.<br />New Fuel on Board in gal could be:" +  (fuelOnBoardGal - ((totalWeight - rampWt) /6))
     } 
     else {
-        theHtml += "<b>Flight weight is ok</b> You could carry: " + (totalWeight - rampWt) + "lbs more."
+        theHtml += "<b>Flight weight is ok</b> You could carry: " + (rampWt - totalWeight) + "lbs more."
     }
     $("#wanOutput").html(theHtml);
 }
