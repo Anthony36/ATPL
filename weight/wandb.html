@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <td>
-                    Taxi allowance for runup & startup
+                    Taxi allowance for runup & startup<br />(make 0 if included in your fuel on board #)
                 </td>
                 <td>
                     <input type="text" id="taxiAllowance" value="-5" />
@@ -158,7 +158,7 @@
             </tr>
             <tr>
                 <td>
-                    <b>Total</b>
+                    <b>Total takeoff weight</b>
                 </td>
                 <td>
                     <input type="text" id="totalWeight" />
@@ -184,7 +184,7 @@
             </tr>
             <tr>
                 <td>
-                    Landing Weight
+                    Landing Fuel Weight
                 </td>
                 <td>
                     <input type="text" id="landingWeightWeight" value="" />
@@ -196,10 +196,27 @@
                     <input type="text" id="landingWeightMoment" />
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <b>Total Landing</b>
+                </td>
+                <td>
+                    <input type="text" id="totalLandingWeight" />
+                </td>
+                <td>
+                    <input type="text" id="totalLandingArm" />
+                </td>
+                <td>
+                    <input type="text" id="totalLandingMoment" />
+                </td>
+            </tr>
         </table>
         <input id="getWANOutput" value="Calculate" type="button" default />
         <p id="wanOutput">
 
         </p>
+        <div id="wanChart">
+
+        </div>
     </form>
 </body>

@@ -3,8 +3,15 @@ $(document).ready(function() {
         console.log("Handler for getWANOutput .click() called.");
         getWANOutput();
     });    
+    //createWanChart();
 
 });
+
+function createWanChart(){
+    let wanChart = $("#wanChart");
+    wanChart.append("<div class='wanVertical'></div>");
+    wanChart.append("<div class='wanHorizontal'></div>");
+}
 
 let basicEmptyWeightWeight;
 let basicEmptyWeightArm;
@@ -47,6 +54,10 @@ let taxiAllowance;
 let baggageAreaTwoWeight;
 let baggageAreaTwoArm;
 let baggageAreaTwoMoment;
+
+let totalLandingWeight;
+let totalLandingArm;
+let totalLandingMoment;
 
 function refreshValues(){
 
@@ -91,6 +102,11 @@ function refreshValues(){
     landingWeightMoment = parseFloat($("#landingWeightMoment").val());
     
     fuelForFlightUsedGal = parseFloat($("#fuelForFlightUsedGal").val());
+
+    totalLandingWeight = parseFloat($("#totalLandingWeight").val());
+    totalLandingArm = parseFloat($("#totalLandingArm").val());
+    totalLandingMoment = parseFloat($("#totalLandingMoment").val());
+
 }
 function getWANOutput(){
     refreshValues();
@@ -131,11 +147,20 @@ function getWANOutput(){
     totalArm = totalMoment / totalWeight;
     $("#totalArm").val(totalArm);
 
-    landingWeightWeight = totalWeight - (fuelForFlightUsedGal * 6)
+    landingWeightWeight = (fuelForFlightUsedGal * 6)
     $("#landingWeightWeight").val(landingWeightWeight);
 
     landingWeightMoment = landingWeightArm * landingWeightWeight;
     $("#landingWeightMoment").val(landingWeightMoment);
+
+    totalLandingWeight = subTotalNofuelWeight + landingWeightWeight;
+    $("#totalLandingWeight").val(totalLandingWeight);
+
+    totalLandingMoment = subTotalNofuelMoment + landingWeightMoment;
+    $("#totalLandingMoment").val(totalLandingMoment);
+
+    totalLandingArm = totalLandingMoment / totalLandingWeight;
+    $("#totalLandingArm").val(totalLandingArm);
 
     let theHtml="";
     if (totalWeight > grossWt){

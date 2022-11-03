@@ -6,3 +6,23 @@
     margin: 0px;
     padding: 0px;
 }
+
+.wanVertical {
+    height: 100%;
+    display: inline-block;
+    width: 2px;
+    background-color: black;
+    margin-right: 10px;
+    z-index: 0;
+}
+
+
+.wanHorizontal {
+    height: 2px;
+    display: inline-block;
+    width: 100%;
+    background-color: black;
+    margin-bottom: 10px;
+    z-index: 0;
+}
+
