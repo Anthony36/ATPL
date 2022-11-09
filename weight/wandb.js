@@ -113,7 +113,7 @@ function getWANOutput(){
     //taxiallowance is entered as a negative so add here:
     grossWt = rampWt + taxiAllowance;
     $("#grossWt").val(grossWt);
-    fuelOnBoardWeight = (fuelOnBoardGal * 6) - taxiAllowance;
+    fuelOnBoardWeight = (fuelOnBoardGal * 6) + taxiAllowance;
     $("#fuelOnBoardWeight").val(fuelOnBoardWeight);
 
     fuelForFlightMoment = fuelForFlightArm * fuelForFlightWeight;
